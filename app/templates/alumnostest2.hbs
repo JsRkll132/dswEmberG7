@@ -1,0 +1,32 @@
+{{page-title "Alumnostest2"}}
+<table>
+    <thead>
+      <tr>
+        <th>ID Alumno</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+        <th>Nombres</th>
+        <th>Correo Institucional</th>
+        <th>Número de Teléfono</th>
+        <th>Rol</th>
+        <th>Grupo</th>
+        <th>Número de Materias Anteriores</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each this.model as |alumno|}}
+        <tr>
+          <td>{{alumno.idAlumno}}</td>
+          <td>{{alumno.apellidoPaterno}}</td>
+          <td>{{alumno.apellidoMaterno}}</td>
+          <td>{{alumno.nombres}}</td>
+          <td>{{alumno.correoInst}}</td>
+          <td>{{alumno.numTelef}}</td>
+          <td>{{alumno.rol}}</td>
+          <td>{{alumno.grupo}}</td>
+          <td>{{alumno.numMatAnt}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{outlet}}

@@ -1,0 +1,59 @@
+{{page-title "Agregar"}}
+{{outlet}}
+{{!-- templates/agregar.hbs --}}
+<form {{on "submit" this.saveAlumno}}  class="row g-3">
+  <div class="col-md-6">
+    <label for="validationServer01" class="form-label">Codigo de alumno</label>
+    <input type="text" class="form-control" id="validationServer01" aria-describedby="validationServer01Feedback" required={{true}} value={{this.formAlum.idAlumno}}>
+    <div id="validationServer01Feedback" class="invalid-feedback">
+      Por favor, ingrese un código de alumno válido.
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="validationServer02" class="form-label">Correo Institucional</label>
+    <input type="email" class="form-control" id="validationServer02" aria-describedby="validationServer02Feedback" required={{true}} value={{this.formAlum.correoInst}}>
+    <div id="validationServer02Feedback" class="invalid-feedback">
+      Por favor, ingrese un correo institucional válido.
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationServer03" class="form-label">Nombres</label>
+    <input type="text" class="form-control" id="validationServer03" required={{true}} value={{this.formAlum.nombres}}>
+    <div class="invalid-feedback">
+      Por favor, ingrese el nombre del alumno.
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationServer04" class="form-label">Apellido Paterno</label>
+    <input type="text" class="form-control" id="validationServer04" required={{true}} value={{this.formAlum.apellidoPaterno}}>
+    <div class="invalid-feedback">
+      Por favor, ingrese el apellido paterno del alumno.
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationServer05" class="form-label">Apellido Materno</label>
+    <input type="text" class="form-control" id="validationServer05" required={{true}} value={{this.formAlum.apellidoMaterno}}>
+    <div class="invalid-feedback">
+      Por favor, ingrese el apellido materno del alumno.
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Grupo</label>
+    <input class="form-control" id="validationServer05" required={{true}} value={{this.formAlum.grupo}}>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Número de Repitencias</label>
+    <input class="form-control" id="validationServer06" required={{true}} value={{this.formAlum.numMatAnt}}>
+  </div>
+  <div class="col-md-6">
+    <label for="validationServer08" class="form-label">Celular</label>
+    <input type="text" class="form-control" id="validationServer08" required={{true}} value={{this.formAlum.numTelef}}>
+    <div class="invalid-feedback">
+      Por favor, ingrese un número de celular válido.
+    </div>
+  </div>
+  <div class="col-md-12">
+    <button class="btn btn-primary" type="submit">Guardar Alumno</button>
+    <button class="btn btn-danger" style="margin-left: 20px;" type="button" {{action "cancelAdd"}}>Cancelar</button>
+  </div>
+</form>

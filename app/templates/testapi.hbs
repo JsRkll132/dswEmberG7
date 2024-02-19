@@ -1,0 +1,48 @@
+{{page-title "Testapi"}}
+<div class="table-responsive">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-8"><h2><b>Alumnos Matriculados</b></h2></div>
+                <div class="col-sm-4">
+                    <button type="button"  {{on "click" this.goToAgregar}}>Agregar Alumno</button>
+                    <button type="button" {{on "click" this.editAlumno}}>Editar Alumno</button>
+                    <button type="button"{{on "click" this.deleteAlumno}}>Borrar Alumno</button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Codigo Alumno</th>
+                    <th>Nombres</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                    <th>Correo</th>
+                    <th>Celular</th>
+                    <th>Grupo</th>
+                    <th>Repitencias</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each this.model as |alumno|}}
+                    <tr>
+                        <td>{{alumno.idAlumno}}</td>
+                        <td>{{alumno.nombres}}</td>
+                        <td>{{alumno.apellidoPaterno}}</td>
+                        <td>{{alumno.apellidoMaterno}}</td>
+                        <td>{{alumno.correoInst}}</td>
+                        <td>{{alumno.numTelef}}</td>
+                        <td>{{alumno.grupo}}</td>
+                        <td>{{alumno.numMatAnt}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <button type="button"{{on "click" this.salir}}>Salir</button>
+        <button type="button" {{on "click" this.verNotas}}>
+            Ver Notas
+        </button>
+    </div>
+</div>
+{{outlet}}
